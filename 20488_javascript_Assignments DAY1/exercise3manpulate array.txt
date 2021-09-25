@@ -1,0 +1,27 @@
+<html>
+
+<head>
+
+<script type = "text/javascript">
+
+var myArray = ["hello", "What is the meaning of life?"];
+
+myArray.push(42);
+myArray.shift();
+
+
+document.write(myArray[0] + "<br />");
+
+document.write(myArray[1] + "<br />");
+
+console.log(myArray[0]);
+
+console.log(myArray[1]);
+
+</script>
+
+</head>
+
+<body></body>
+
+</html>

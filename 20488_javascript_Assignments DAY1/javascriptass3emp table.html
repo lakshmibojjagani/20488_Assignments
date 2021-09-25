@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Assignment_4</title>
+  </head>
+  <body>
+    <h1>Employees</h1>
+    <input type="text" id="name" />
+    <button onclick="submit()">Submit</button>
+    <table id="empTable" border="1">
+      <tr>
+        <th>Name</th>
+        <th>Department</th>
+      </tr>
+    </table>
+  </body>
+  <script>
+    var empName = [
+      "lakshmi","esh","jay","sowmya","anjali","akhil","arun","harika","sowmya","ajay","pavan","nandish","rakshitha","satya",
+      "arjun","likitha","ankith","ramesh","geeta","harshit",
+    ];
+    var dept = [
+      "HR","Admin","Training","HR","sales","finance","accounting","r&d","r&d","Admin","accounting","Training",
+      "accounting","r&d","HR","Admin","sales","finance","r&d","accounting",
+    ];
+    var table = document.getElementById("empTable");
+    console.log(empName.length);
+    for (var i = 0; i < empName.length; i++) {
+      var row = document.createElement("tr");
+      row.classList.add("temp");
+      row.setAttribute("id", empName[i].toUpperCase());
+
+      var cell = document.createElement("td");
+      var cellText = document.createTextNode(empName[i]);
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+
+      var cell = document.createElement("td");
+      var cellText = document.createTextNode(dept[i]);
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+      table.appendChild(row);
+
+      function submit() {
+        var rows = table.getElementsByTagName("tr");
+
+        for (i = 0; i < rows.length; i++) {
+          rows[i].style.backgroundColor = "white";
+        }
+        var key = document.getElementById("name").value.toUpperCase();
+        console.log(key);
+        document.getElementById(key).style.backgroundColor = "yellow";
+      }
+    }
+  </script>
+</html>

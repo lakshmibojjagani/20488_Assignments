@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eployess dedtails</title>
+  </head>
+  <body>
+    <form name="userForm">
+      <pre>
+        Name:<input type="text" name="name" /><br />
+        Email:<input type="text" name="email" /><br />
+      Address: <input type="text" name="address" /><br />
+        City: <input type="text" name="city" /><br />
+        state: <input type="text" name="state" /><br />
+        Zip Code: <input type="text" name="zipCode" /><br />
+        Mobile Number:  <input type="text" name="mobno" /><br />
+        <input type="button" value="Submit" onclick="validate()" /><br>
+        <hr>
+        <input type="button" value="Display" onclick="display()" /><br>
+      </pre>
+    </form>
+    <p id="empName"></p>
+    <p id="empEmail"></p>
+    <p id="empAdds"></p>
+    <p id="empCity"></p>
+    <p id="empState"></p>
+    <p id="empZipCOde"></p>
+    <p id="empMno"></p>
+    <script>
+      var empDetails = new Array();
+      function validate() {
+        if (
+          document.userForm.name.value == null ||
+          document.userForm.name.value == ""
+        ) {
+          alert("Please enter user name.");
+          document.userForm.name.focus();
+          return false;
+        } else if (
+          document.userForm.email.value == null ||
+          document.userForm.email.value == ""
+        ) {
+          alert("Please enter email.");
+          document.email.password.focus();
+          return false;
+        } else if (
+          document.userForm.address.value == null ||
+          document.userForm.address.value == ""
+        ) {
+          alert("Please enter address.");
+          document.userForm.address.focus();
+          return false;
+        } else if (
+          document.userForm.city.value == null ||
+          document.userForm.city.value == ""
+        ) {
+          alert("Please enter city.");
+          document.userForm.city.focus();
+          return false;
+        } else if (
+          document.userForm.state.value == null ||
+          document.userForm.state.value == ""
+        ) {
+          alert("Please enter state.");
+          document.userForm.state.focus();
+          return false;
+        } else if (
+          document.userForm.zipCode.value == null ||
+          document.userForm.zipCode.value == ""
+        ) {
+          alert("Please enter Zip Code.");
+          document.userForm.zipCode.focus();
+          return false;
+        } else if (
+          document.userForm.mobno.value == null ||
+          document.userForm.mobno.value == ""
+        ) {
+          alert("Please enter Zip Code.");
+          document.userForm.mobno.focus();
+          return false;
+        } else {
+          empDetails.push({
+            name: document.userForm.name.value,
+            email: document.userForm.email.value,
+            adds: document.userForm.address.value,
+            city: document.userForm.city.value,
+            state: document.userForm.state.value,
+            zipCode: document.userForm.zipCode.value,
+            mno: document.userForm.mobno.value,
+          });
+          console.log(empDetails);
+          return true;
+        }
+      }
+      function display() {
+        console.log(emp);
+        if (empDetails.length < 1) {
+          document.getElementById("empName").innerHTML =
+            "No employees details ";
+          document.getElementById("empEmail").innerHTML = "";
+          document.getElementById("empAdds").innerHTML = "";
+          document.getElementById("empCity").innerHTML = "";
+          document.getElementById("empState").innerHTML = "";
+          document.getElementById("empMno").innerHTML = "";
+          document.getElementById("empZipCOde").innerHTML = "";
+        } else {
+          var emp = empDetails.pop();
+          document.getElementById("empName").innerHTML = "Name: " + emp.name;
+          document.getElementById("empEmail").innerHTML = "Email: " + emp.email;
+          document.getElementById("empAdds").innerHTML = "Address: " + emp.adds;
+          document.getElementById("empCity").innerHTML = "City: " + emp.city;
+          document.getElementById("empState").innerHTML = "State: " + emp.state;
+          document.getElementById("empMno").innerHTML =
+            "Mobile Number: " + emp.mno;
+          document.getElementById("empZipCOde").innerHTML =
+            "Zip Code: " + emp.zipCode;
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<html>
+
+<head>
+
+<title>variables!!!</title>
+
+<script type="text/javascript">
+
+var firstName = "lakshmi";
+
+var lastName = "lak";
+
+var fullName = firstName + " " + lastName;
+document.write(fullName + "</br>");
+ 
+
+var myVar=10;
+
+var String= "MeaningOfLife";
+
+document.write(String + myVar*2);
+
+</script>
+
+</head>
+
+<body> </body>
+
+</html>
